@@ -11,9 +11,9 @@
   "exports": {
     ".": {
       "import": "./dist/main.js",
-      "types": "./dist/main.d.ts",
-      "style": "./dist/assets/main.css"
-    }
+      "types": "./dist/main.d.ts"
+    },
+    "./styles": "./dist/assets/main.css"
   },
   "scripts": {
     "phoenix": "rimraf bun.lock node_modules && bun install",

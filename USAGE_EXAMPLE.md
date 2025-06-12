@@ -8,11 +8,30 @@ Here's a complete example of how to use `@pauvelasco77/web3-react-ui` in your Re
 npm install @pauvelasco77/web3-react-ui
 ```
 
-## 2. Basic Usage
+## 2. Import the styles
+
+**Important**: You must import the CSS styles for the components to work properly.
+
+```tsx
+// Import the styles first (required)
+import '@pauvelasco77/web3-react-ui/styles';
+```
+
+Or in your main CSS file:
+
+```css
+/* In your index.css or App.css */
+@import '@pauvelasco77/web3-react-ui/styles';
+```
+
+## 3. Basic Usage
 
 ```tsx
 // App.tsx
 import React from 'react';
+// Import the styles (required)
+import '@pauvelasco77/web3-react-ui/styles';
+// Import the components
 import { Button, Input } from '@pauvelasco77/web3-react-ui';
 
 function App() {
@@ -77,7 +96,7 @@ function App() {
 export default App;
 ```
 
-## 3. With Tailwind CSS (Recommended)
+## 4. With Tailwind CSS (Recommended)
 
 If your project uses Tailwind CSS, the components will integrate seamlessly:
 
@@ -112,7 +131,7 @@ function MyComponent() {
 }
 ```
 
-## 4. Custom Styling
+## 5. Custom Styling
 
 You can override the default theme by modifying CSS custom properties:
 
@@ -133,7 +152,7 @@ You can override the default theme by modifying CSS custom properties:
 }
 ```
 
-## 5. TypeScript Support
+## 6. TypeScript Support
 
 The package includes full TypeScript support:
 
@@ -161,22 +180,31 @@ const CustomButton: React.FC<CustomButtonProps> = ({
 
 ### Styles not appearing?
 
-Make sure you're importing the components correctly. The styles should be automatically included:
+Make sure you're importing the styles correctly:
 
 ```tsx
-// ✅ Correct - styles are automatically imported
+// ✅ Correct - import styles first
+import '@pauvelasco77/web3-react-ui/styles';
 import { Button } from '@pauvelasco77/web3-react-ui';
 
-// ❌ Don't do this unless you need to import styles separately
-import '@pauvelasco77/web3-react-ui/src/style.css';
+// ❌ Wrong - missing styles import
+import { Button } from '@pauvelasco77/web3-react-ui'; // Styles won't work
+```
+
+Or import in your CSS file:
+
+```css
+/* In your main CSS file */
+@import '@pauvelasco77/web3-react-ui/styles';
 ```
 
 ### Using with Next.js?
 
-The package works out of the box with Next.js. Just import and use:
+The package works with Next.js. Make sure to import the styles:
 
 ```tsx
 // pages/index.tsx or app/page.tsx
+import '@pauvelasco77/web3-react-ui/styles';
 import { Button, Input } from '@pauvelasco77/web3-react-ui';
 
 export default function Home() {
@@ -186,4 +214,12 @@ export default function Home() {
     </main>
   );
 }
+```
+
+Or import the styles in your `_app.tsx` (Pages Router) or `layout.tsx` (App Router):
+
+```tsx
+// _app.tsx (Pages Router) or layout.tsx (App Router)
+import '@pauvelasco77/web3-react-ui/styles';
+// ... rest of your app
 ``` 

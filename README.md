@@ -10,9 +10,15 @@ npm install @pauvelasco77/web3-react-ui
 
 ## Usage
 
-### Importing Components
+### Importing Components and Styles
+
+**Important**: You must import the CSS styles for the components to work properly.
 
 ```tsx
+// Import the styles (required)
+import '@pauvelasco77/web3-react-ui/styles';
+
+// Import the components
 import { Button, Input } from '@pauvelasco77/web3-react-ui';
 
 function App() {
@@ -25,13 +31,13 @@ function App() {
 }
 ```
 
-### Importing Styles
+### Alternative: Import styles in your CSS file
 
-The styles are automatically imported when you import the components. However, if you need to import them separately, you can do so:
+You can also import the styles in your main CSS file:
 
-```tsx
-// This is automatically included when importing components
-import '@pauvelasco77/web3-react-ui/src/style.css';
+```css
+/* In your main CSS file (e.g., index.css or App.css) */
+@import '@pauvelasco77/web3-react-ui/styles';
 ```
 
 ### Components

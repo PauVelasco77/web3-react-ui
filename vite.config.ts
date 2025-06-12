@@ -24,7 +24,7 @@ export default defineConfig({
     },
 
     rollupOptions: {
-      external: ['react', 'react/jsx-runtime'],
+      external: ['react', 'react/jsx-runtime', 'react-dom'],
       input: Object.fromEntries(
         glob
           .sync('src/**/*.{ts,tsx}')
